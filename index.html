@@ -16,7 +16,7 @@
         type: 'general', // analysis type for the data, can be 'general', 'unique', or 'average'
         unit: 'day', // level of granularity of the data, can be 'minute', 'hour', 'day', or 'month'
     };
-    MP.api.segment('Watch Video', params).done(function(queryResults) {
+    MP.api.segment('$custom_event:244576', params).done(function(queryResults) {
         console.log(queryResults.values());
     });
     </script>
