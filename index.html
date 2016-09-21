@@ -9,7 +9,16 @@
   <body class="mixpanel-platform-body">
     <h1>Hello, World!</h1>
     <script>
-      // Run queries and display results here
+    var params = {
+        from: moment().subtract(60, 'days'), // the earliest date you'd like to include in the query
+        to: moment(), // the latest date you'd like to include in the query
+        limit: 100, // maximum number of results to return
+        type: 'general', // analysis type for the data, can be 'general', 'unique', or 'average'
+        unit: 'day', // level of granularity of the data, can be 'minute', 'hour', 'day', or 'month'
+    };
+    MP.api.segment('Watch Video', '$browser', params).done(function(queryResults) {
+        console.log(queryResults.values());
+    });
     </script>
   </body>
 </html>
